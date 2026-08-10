@@ -9,8 +9,8 @@
 class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
-        ListNode* slow=head;
-        ListNode* fast=head;
+        ListNode* slow=head; 
+        ListNode* fast=head; // fast can be 2x, 3x, 4x, 5x and it will be catch slow before slow reaches end
         bool flag=false;
         while(fast!=NULL && fast->next!=NULL){
             slow=slow->next;

@@ -11,14 +11,14 @@ public:
             prod*=nums[i-1];
             prefix[i]=prod;
         }
-        prod=1;
+        prod=nums[n-1];
         for(int i=n-2;i>=0;i--){
-            prod*=nums[i+1];
-            suffix[i]=prod;
+            prefix[i]*=prod;
+             prod*=nums[i];
         }
-        for(int i=0;i<n;i++){
-            nums[i]=prefix[i]*suffix[i];
-        }
-        return nums;
+        // for(int i=0;i<n;i++){
+        //     nums[i]=prefix[i]*suffix[i];
+        // }
+        return prefix;
     }
 };
